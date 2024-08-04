@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Calculator.</title>
+<style>
+.dive{
+    height:500px;
+    width: 500px;
+    
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: grid;
+    gap: 15px;
+}
+.para-div{
+    width: 500px;
+    height: 100px;
+    
+    text-align: end;
+
+}
+.para{
+    font-size: larger;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 40px;
+}
+button{
+    border: none;
+    background-color: rgb(48, 43, 43);
+    color: white;
+    border-radius: 50%;
+    font-size: 40px;
+}
+.container{
+    margin-left: 30%;
+    background-color: black;
+    display: inline-block;
+    border-radius: 10px;
+}
+.a{
+    background-color: gray;
+    color: black;
+}
+.b{
+    background-color: orange;
+
+}
+button:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+.c{
+    width: 200px;
+}
+</style> 
+</head>
+<body>
+<div class="container">
+    <div class="para-div">
+<p class="para"></p>
+    </div>
+    
+ <div class="dive">
+ <button class="a" onclick="calcu('+');"> +</button>
+ <button class="a" onclick="calcu('-')">-</button>
+ <button class="a" onclick="calcu('*')">*</button>
+ <button class="b" onclick="calcu('/')">/</button>
+ <button onclick="calcu('1')">1</button>
+ <button onclick="calcu('2')">2</button>
+ <button onclick="calcu('3')">3</button>
+ <button class="b" onclick="calcu('0')">0</button>
+ <button onclick="calcu('4')">4</button>
+ <button onclick="calcu('5')">5</button>
+ <button onclick="calcu('6')">6</button>
+ <button class="b" onclick="equal();">=</button>
+ <button onclick="calcu('7')">7</button>
+ <button onclick="calcu('8')">8</button>
+ <button onclick="calcu('9')">9</button>
+ <button class="b" onclick="ac()">AC</button>
+
+</div>   
+</div>
+ 
+<script>
+
+let calc = '';
+  let para = document.querySelector(".para");
+  function calcu(value){
+    calc += value;
+     para.innerHTML = calc;
+  }
+  function equal(){
+    calc = eval(calc); 
+    para.innerHTML = calc;
+  }
+  function ac(){
+    calc = '';
+    para.innerHTML = calc;
+  }
+</script>
+</body>
+</html>
